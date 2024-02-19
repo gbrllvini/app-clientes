@@ -6,7 +6,7 @@ public class ClienteRepository
 {
     public List<Cliente> clientes = new();
 
-    public void ShowCliente(Cliente cliente)
+    public void Show(Cliente cliente)
     {
         Console.WriteLine("ID.............:" + cliente.Id);
         Console.WriteLine("Nome...........:" + cliente.Name);
@@ -16,19 +16,19 @@ public class ClienteRepository
         Console.WriteLine(".................................:");
     }
 
-    public void ShowAllClientes(List<Cliente> clientes)
+    public void ShowAll(List<Cliente> clientes)
     {
         Console.Clear();
 
         foreach (var cliente in clientes)
         {
-            ShowCliente(cliente);
+            Show(cliente);
         }
 
         Console.ReadKey();
     }
 
-    public void CreateCliente()
+    public void Create()
     {
         Console.Clear();
 
@@ -56,7 +56,7 @@ public class ClienteRepository
         clientes.Add(cliente);
 
         Console.WriteLine("Cliente Cadastrado com sucesso! [Enter]");
-        ShowCliente(cliente);
+        Show(cliente);
         Console.ReadKey();
     }
 }
