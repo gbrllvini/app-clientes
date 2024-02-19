@@ -1,4 +1,5 @@
-﻿using Repository;
+﻿using System.Globalization;
+using Repository;
 
 namespace AppClientes;
 
@@ -9,6 +10,10 @@ class Program
 
     static void Main(string[] args)
     {
+        var culture = new CultureInfo("pt-BR");
+        Thread.CurrentThread.CurrentCulture = culture;
+        Thread.CurrentThread.CurrentUICulture = culture;
+
         while (true)
         {
             Menu();
