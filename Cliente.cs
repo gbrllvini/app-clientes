@@ -6,5 +6,5 @@ public class Cliente
     public string? Name { get; set; }
     public DateOnly Birthdate { get; set; }
     public DateTime CreatedAt { get; set; }
-    public decimal Desconto { get; set; }
+    public decimal Discount { get; set; }
 }
