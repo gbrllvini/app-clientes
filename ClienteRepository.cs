@@ -32,16 +32,16 @@ public class ClienteRepository
     {
         Console.Clear();
 
-        Console.WriteLine("Nome do cliente: ");
+        Console.Write("Nome do cliente: ");
         var name = Console.ReadLine();
         Console.Write(Environment.NewLine);
 
-        Console.WriteLine("Data de nascimento: ");
-        var birthDate = DateOnly.Parse(Console.ReadLine());
+        Console.Write("Data de nascimento: ");
+        var birthDate = DateOnly.Parse(Console.ReadLine()!);
         Console.Write(Environment.NewLine);
 
-        Console.WriteLine("Desconto: ");
-        var discount = decimal.Parse(Console.ReadLine());
+        Console.Write("Desconto: ");
+        var discount = decimal.Parse(Console.ReadLine()!);
         Console.Write(Environment.NewLine);
 
         var cliente = new Cliente
@@ -56,6 +56,45 @@ public class ClienteRepository
         clientes.Add(cliente);
 
         Console.WriteLine("Cliente Cadastrado com sucesso! [Enter]");
+        Show(cliente);
+        Console.ReadKey();
+    }
+
+    public void Edit()
+    {
+        Console.Clear();
+        Console.Write("Informe o código do cliente: ");
+        var code = Console.ReadLine();
+
+        var cliente = clientes.FirstOrDefault(p => p.Id == int.Parse(code!));
+
+        if (cliente == null)
+        {
+            Console.WriteLine("Cliente não encontrado! [Enter]");
+            Console.ReadKey();
+            return;
+        }
+
+        Show(cliente);
+
+        Console.Write("Nome do cliente: ");
+        var name = Console.ReadLine();
+        Console.Write(Environment.NewLine);
+
+        Console.Write("Data de nascimento: ");
+        var birthDate = DateOnly.Parse(Console.ReadLine()!);
+        Console.Write(Environment.NewLine);
+
+        Console.Write("Nome do cliente: ");
+        var discount = decimal.Parse(Console.ReadLine()!);
+        Console.Write(Environment.NewLine);
+
+        cliente.Name = name;
+        cliente.Birthdate = birthDate;
+        cliente.Discount = discount;
+        cliente.UpdatedAt = DateTime.Now;
+
+        Console.WriteLine("Cliente Alterado com sucesso! [Enter]");
         Show(cliente);
         Console.ReadKey();
     }
