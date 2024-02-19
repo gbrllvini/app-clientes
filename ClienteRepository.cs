@@ -16,7 +16,7 @@ public class ClienteRepository
         Console.WriteLine(".................................:");
     }
 
-    public void ShowAll(List<Cliente> clientes)
+    public void ShowAll()
     {
         Console.Clear();
 
@@ -85,7 +85,7 @@ public class ClienteRepository
         var birthDate = DateOnly.Parse(Console.ReadLine()!);
         Console.Write(Environment.NewLine);
 
-        Console.Write("Nome do cliente: ");
+        Console.Write("Desconto: ");
         var discount = decimal.Parse(Console.ReadLine()!);
         Console.Write(Environment.NewLine);
 
@@ -115,6 +115,7 @@ public class ClienteRepository
         }
 
         Show(cliente);
+        clientes.Remove(cliente);
         Console.WriteLine("Cliente removido com sucesso! [Enter]");
         Console.ReadKey();
     }
