@@ -8,12 +8,16 @@ public class ClienteRepository
 
     public void Show(Cliente cliente)
     {
-        Console.WriteLine("ID.............:" + cliente.Id);
-        Console.WriteLine("Nome...........:" + cliente.Name);
-        Console.WriteLine("Desconto.......:" + cliente.Discount.ToString("0.00"));
-        Console.WriteLine("Data Nascimento:" + cliente.Birthdate);
-        Console.WriteLine("Data Cadastro..:" + cliente.CreatedAt);
-        Console.WriteLine(".................................:");
+        Console.WriteLine("ID.............: " + cliente.Id);
+        Console.WriteLine("Nome...........: " + cliente.Name);
+        Console.WriteLine("Desconto.......: " + cliente.Discount.ToString("0.00"));
+        Console.WriteLine("Data Nascimento: " + cliente.Birthdate);
+        Console.WriteLine("Data Cadastro..: " + cliente.CreatedAt);
+        if (cliente.UpdatedAt != null)
+        {
+            Console.WriteLine("Editado Em.....: " + cliente.UpdatedAt);
+        }
+        Console.WriteLine(".................................: ");
     }
 
     public void ShowAll()
