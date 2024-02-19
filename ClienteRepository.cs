@@ -123,4 +123,23 @@ public class ClienteRepository
         Console.WriteLine("Cliente removido com sucesso! [Enter]");
         Console.ReadKey();
     }
+
+    public void SaveToTxt()
+    {
+        var json = System.Text.Json.JsonSerializer.Serialize(clientes);
+
+        File.WriteAllText("clientes.txt", json);
+    }
+
+    public void ReadTxt()
+    {
+        if (File.Exists("clientes.txt"))
+        {
+            var data = File.ReadAllText("clientes.txt");
+            var clientesTxt = System.Text.Json.JsonSerializer.Deserialize<List<Cliente>>(data);
+
+            clientes.AddRange(clientesTxt!);
+        }
+    }
+
 }

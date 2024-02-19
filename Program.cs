@@ -14,6 +14,7 @@ class Program
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
 
+        _clienteRepository.ReadTxt();
         while (true)
         {
             Menu();
@@ -72,6 +73,7 @@ class Program
                 }
             case 5:
                 {
+                    _clienteRepository.SaveToTxt();
                     Environment.Exit(0);
                     break;
                 }
