@@ -33,7 +33,7 @@ public class ClienteRepository
         Console.Clear();
 
         Console.WriteLine("Nome do cliente: ");
-        var nome = Console.ReadLine();
+        var name = Console.ReadLine();
         Console.Write(Environment.NewLine);
 
         Console.WriteLine("Data de nascimento: ");
@@ -47,7 +47,7 @@ public class ClienteRepository
         var cliente = new Cliente
         {
             Id = clientes.Count + 1,
-            Name = nome,
+            Name = name,
             Discount = discount,
             Birthdate = birthDate,
             CreatedAt = DateTime.Now
