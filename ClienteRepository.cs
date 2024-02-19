@@ -98,4 +98,24 @@ public class ClienteRepository
         Show(cliente);
         Console.ReadKey();
     }
+
+    public void Delete()
+    {
+        Console.Clear();
+        Console.Write("Informe o código do cliente: ");
+        var code = Console.ReadLine();
+
+        var cliente = clientes.FirstOrDefault(p => p.Id == int.Parse(code!));
+
+        if (cliente == null)
+        {
+            Console.WriteLine("Cliente não encontrado! [Enter]");
+            Console.ReadKey();
+            return;
+        }
+
+        Show(cliente);
+        Console.WriteLine("Cliente removido com sucesso! [Enter]");
+        Console.ReadKey();
+    }
 }
