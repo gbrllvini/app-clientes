@@ -17,7 +17,7 @@ public class ClienteRepository
         {
             Console.WriteLine("Editado Em.....: " + cliente.UpdatedAt);
         }
-        Console.WriteLine(".................................: ");
+        Console.WriteLine("---------------------------------");
     }
 
     public void ShowAll()
